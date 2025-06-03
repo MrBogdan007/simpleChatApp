@@ -23,7 +23,7 @@ public class ChatServer {
             ServerSocketChannel serverListener = ServerSocketChannel.open();
             serverListener.bind(new InetSocketAddress(5000));
             while(serverListener.isOpen()){
-                System.out.println("Listening for the port 5000");
+                System.out.println("Listening for the port 5000"); //
                 //BufferedReader br = new BufferedReader(Channels.newReader(serverListener, StandardCharsets.UTF_8));
                 SocketChannel sc = serverListener.accept();
                Reader serverReader = Channels.newReader( sc, StandardCharsets.UTF_8);
