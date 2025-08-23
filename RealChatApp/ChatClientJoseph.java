@@ -37,7 +37,7 @@ public class ChatClientJoseph {
         jPanel.add(jLabel);
         jPanel.add(textField);
         jPanel.add(jButton);
-        jFrameSetup(jPanel);
+            jFrameSetup(jPanel);
     }
     public void sendMessage(){
     clientWriter.println(textField.getText());

@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.awt.*;
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -14,10 +16,21 @@ import java.util.concurrent.Executors;
 public class ChatServer {
     private final List<PrintWriter> clientSenders = new ArrayList<>();
     public static  void main (String[] args){
-
+        setUpGUI();
         ChatServer chatServer = new ChatServer();
         chatServer.setUpNetworking();
 
+
+    }
+
+    private static void setUpGUI() {
+        JFrame frame = new JFrame("No smoking");
+        JButton button = new JButton("Click me");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().add(button);
+       frame.setSize(300,300);
+        frame.setVisible(true);
+        System.out.println("heelo");
     }
 
     public String setUpNetworking(){
@@ -41,6 +54,9 @@ public class ChatServer {
         }
     return "";
     }
+
+
+
     public class ClientHandler implements Runnable{
         BufferedReader reader;
         SocketChannel socket;
